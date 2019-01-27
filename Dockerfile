@@ -6,7 +6,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
-# environment settings
+# environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config" \
 PYTHONIOENCODING=utf-8
@@ -34,9 +34,9 @@ RUN \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
 
-# add local files
+# add local files
 COPY root/ /
 
 # ports and volumes
 EXPOSE 8080 9090
-VOLUME /config /downloads /incomplete-downloads
+VOLUME /config /data
